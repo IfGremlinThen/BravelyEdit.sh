@@ -20,8 +20,8 @@ In the Terminal you will be prompted to enter the save file you wish to edit (1,
 The script will `exit` if
 - you specify an invalid save file
 - the specified save file doesn't exist
-- you request a population counter lower than 1
-- you request a population counter greater than 255
+- you request a population count lower than 1
+- you request a population count greater than 255
 
 The script will inform you of your save file's population count before and after making edits.
 
