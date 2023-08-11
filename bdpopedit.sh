@@ -36,13 +36,8 @@ fi
 hexcount=$(printf "%02X" "$deccount")
 
 #VRITES HEXADECIMAL TO SAVE FILE
-if [ -f "$savepath" ]; then
-  printf '%s' "$hexcount" | xxd -r -p | dd of="$savepath" bs=1 seek=4 count=1 conv=notrunc status=none
-  echo "Population updated to $deccount."
-else
-  echo "Couldn't find $savepath."
-  exit
-fi
+printf '%s' "$hexcount" | xxd -r -p | dd of="$savepath" bs=1 seek=4 count=1 conv=notrunc status=none
+echo "Norende Village now has $deccount residents."
 
 
 #LINUX CITRA BRAVELY DEFAULT COLONY SAVE LOCATION
