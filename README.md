@@ -1,4 +1,4 @@
-# BDPopEdit.sh
+# BravelyEdit.sh
 A simple bash script for editing your Norende Village population count in Bravely Default under Citra.
 
 <p align=center><img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white">  <img src="https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white">  <img src="https://img.shields.io/badge/Linux_Mint-87CF3E?style=for-the-badge&logo=linux-mint&logoColor=white"></p>
@@ -8,12 +8,14 @@ The purpose of this script is to restore functionality to the Norende Village fe
 
 The majority of building repairs take a prohibitively long time to complete with just 1 resident, with some jobs requiring the game be open for as long as *99 hours*, however each additional resident assigned to a job significantly reduces the time it takes to complete, so this script serves to manually edit the number of residents in Norende Village.
 
-***Warning!:*** *This script currently only supports editing save data created under Citra running on a Linux-based operating system.  BACKUP YOUR SAVE FILE before making edits.*
+***Warning!:*** *This script currently only supports editing save data created under Citra running on a Linux-based operating system.  BACKUP YOUR SAVE FILES before making edits.*
+
+This script assumes you're using the `appimage` release of Citra.
 
 ## Save Editing
 Download the script and run the following Terminal command from the same directory:
 ```
-bash bdpopedit.sh
+bash bravelyedit.sh
 ```
 In the Terminal you will be prompted to enter the save file you wish to edit (1, 2, or 3) and then enter your desired number of residents.  The script currently only accepts integers from 1 to 255.
 
@@ -26,7 +28,7 @@ The script will `exit` if
 The script will inform you of your save file's population count before and after making edits.
 
 ## How does it work?
-Your Norende Village save data is contained in one of three hidden files called COLONY#.sav.  The Norende Village population count is stored in two hexadecimal bytes located at 0x4 & 0x5.  BDPopEdit.sh reads your chosen save slot as a filepath then takes a decimal integer from you and converts it to hexadecimal before writing it to the file.
+Your Norende Village save data is contained in one of three hidden files called COLONY#.sav.  The Norende Village population count is stored in two hexadecimal bytes located at 0x4 & 0x5.  BravelyEdit.sh reads your chosen save slot as a filepath then takes a decimal integer from you and converts it to hexadecimal before writing it to the file.
 
 ## Important Notes
 Some useful information to bear in mind regarding Norende Village save data editing:
@@ -37,3 +39,10 @@ Some useful information to bear in mind regarding Norende Village save data edit
 
 ### Personal
 This is my first "romhack"!  I'm aware that there are some GUI save editors floating around out there for Windows, but I wanted to see if I could make a simple shell script that specifically fixed the population issue in Norende Village on Linux.  With some feedback I should be abe to expand it's functionality to work on more platforms or even edit other in-game values.  The main obstacle is knowing where the information is stored.
+
+## Citra Post-Mortem
+You may already know that the developers of Citra discontinued the project after legal action from Nintendo.  Consequently, the `flatpak` version, which this script presumed your use of, no longer launches.  As of 1.0.1, this script presumes you're using the `appimage` version of Citra and locates your saves accordingly.  If you had saves for another version of Citra that you'd like to copy over, saves for all 3 Linux releases can be found in these folders:
+
+**Appimage:** `/.local/share/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001`\
+**Flatpak:** `/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001`\
+**Snap:** `/snap/citra-emu/common/.local/share/citra-emu/sdmc/Nintendo 3DS/000000000000000000000000000000000/000000000000000000000000000000000/title/00040000/000fc500/data/00000001`
