@@ -5,11 +5,14 @@ echo "What is the save file you'd like to edit?"
 echo "(enter 1, 2, or 3)"
 read -r savefile
 if [ "$savefile" -eq 1 ]; then
-  savepath="$HOME/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY0.sav"
+  savepath="$HOME/.local/share/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY0.sav"
+  #savepath="$HOME/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY0.sav"
 elif [ "$savefile" -eq 2 ]; then
-  savepath="$HOME/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY1.sav"
+  savepath="$HOME/.local/share/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY1.sav"
+  #savepath="$HOME/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY1.sav"
 elif [ "$savefile" -eq 3 ]; then
-  savepath="$HOME/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY2.sav"
+  savepath="$HOME/.local/share/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY2.sav"
+  #savepath="$HOME/.var/app/org.citra_emu.citra/data/citra-emu/sdmc/Nintendo 3DS/00000000000000000000000000000000/00000000000000000000000000000000/title/00040000/000fc500/data/00000001/COLONY2.sav"
 else
   echo "That is not a known save file." && exit
 fi
